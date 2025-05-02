@@ -149,7 +149,7 @@ with tabs[0]:
                                     annual_investment_growth_perc=investment_compound,
                                     monthly_rent_amt=monthly_rent,
                                     annual_rent_appreciation_perc=rent_compound)
-        df = compare.create_comparison(plot=False)
+        df = compare.create_comparison()
 
 
         # First show results KPI.
