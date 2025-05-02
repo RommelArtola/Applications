@@ -1,0 +1,1 @@
+fmt_money = lambda x: f"${x:,.0f}"
