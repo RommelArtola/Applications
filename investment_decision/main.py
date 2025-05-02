@@ -3,8 +3,8 @@ from Amortizer import Amortizer
 from Investment import Investment_Compounder
 from Renter import Renting
 # import seaborn as sns
-import matplotlib.pyplot as plt
-import matplotlib.ticker as mtick
+# import matplotlib.pyplot as plt
+# import matplotlib.ticker as mtick
 
 class Compare_Investments(object):
     """
@@ -71,7 +71,7 @@ class Compare_Investments(object):
                                                                   total_monthly_payments=total_month_home_expenses)
         return self.investment_df
 
-    def create_comparison(self, plot:bool):
+    def create_comparison(self):
         rent = self.create_rent_schedule()
         home = self.create_amortization_schedule()
         investment = self.create_investment_schedule()
@@ -86,19 +86,19 @@ class Compare_Investments(object):
         )
         
 
-        if plot == True:
-            plot_df = df[['Date', 'Home Expected Equity', 'Investment Balance at End of Month']]
+        # if plot == True:
+        #     plot_df = df[['Date', 'Home Expected Equity', 'Investment Balance at End of Month']]
 
-            fig, ax = plt.subplots(figsize=(10, 6))
+        #     fig, ax = plt.subplots(figsize=(10, 6))
 
-            sns.lineplot(data=plot_df, x='Date', y='Home Expected Equity', label='Home Equity Value', ax=ax)
-            sns.lineplot(data=plot_df, x='Date', y='Investment Balance at End of Month', label='Investment Value', ax=ax)
+        #     sns.lineplot(data=plot_df, x='Date', y='Home Expected Equity', label='Home Equity Value', ax=ax)
+        #     sns.lineplot(data=plot_df, x='Date', y='Investment Balance at End of Month', label='Investment Value', ax=ax)
 
-            # format y-axis for millions
-            ax.yaxis.set_major_formatter(
-                mtick.FuncFormatter(lambda x, pos: f'{x/1_000_000:.1f} M')
-            )
-            plt.show()
+        #     # format y-axis for millions
+        #     ax.yaxis.set_major_formatter(
+        #         mtick.FuncFormatter(lambda x, pos: f'{x/1_000_000:.1f} M')
+        #     )
+        #     plt.show()
 
 
         return df
