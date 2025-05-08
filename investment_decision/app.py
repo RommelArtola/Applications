@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.graph_objects as go
 from main import Compare_Investments 
 from functions import fmt_money
+import math
 
 
 st.set_page_config(
@@ -91,7 +92,7 @@ with tabs[0]:
             if home_down_payment/home_price >= .20:
                 pmi_default = 0
             else:
-                pmi_default = (home_price - home_down_payment) * 0.0115
+                pmi_default = math.ceil(  (home_price - home_down_payment) * 0.0115  )
 
             pmi_amount = st.number_input(label='Private Mortgage Insurance (PMI)', key='pmi_amount',
                             min_value=0, max_value=None,
