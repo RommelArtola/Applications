@@ -89,14 +89,14 @@ with tabs[0]:
 
 
         with st.expander(label='Optional Home Settings'):
-            if home_down_payment/home_price >= .20:
-                pmi_default = 0
-            else:
-                pmi_default = math.ceil(  ((home_price - home_down_payment) * 0.0115)/12  )
+            # if home_down_payment/home_price >= .20:
+            #     pmi_default = 0
+            # else:
+            #     pmi_default = math.ceil(  ((home_price - home_down_payment) * 0.0115)/12  )
 
             pmi_amount = st.number_input(label='Private Mortgage Insurance (PMI)', key='pmi_amount',
                             min_value=0, max_value=None,
-                            value=pmi_default, step=50, 
+                            value=0, step=50, 
                             help="This is the private mortgage insurance included in most traditional loans until at least 20% of the home total balance "
                             "has been paid. Code will automatically close out PMI when this target is reached.")
 
