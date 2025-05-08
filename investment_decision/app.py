@@ -75,9 +75,17 @@ with tabs[0]:
                         value=4.5, step=0.05, 
                         help="Annual interest rate for the life of the loan. Assumes a fixed interest loan.")
 
+        home_value_compound = st.number_input(label="Expected Annual Home Appreciation Rate", key='home_appreciation_rate',
+                            min_value=0.00, max_value=None,
+                            value=0.00, step=0.05, 
+                            help="Expected annual home appreciation rate. Compounded monthly. Critical field to compare equity vs investment "
+                            "option.")
+
         home_loan_years = st.segmented_control(label="Loan Years", key='home_loan_years',
                         options=[5, 15, 30], default=30,
                         help="Years the loan is borrowed for.")
+        
+
 
         with st.expander(label='Optional Home Settings'):
             if home_down_payment/home_price >= .20:
@@ -102,12 +110,6 @@ with tabs[0]:
                             value=0, step=1_000, 
                             help="Any other ONE-TIME fees associated with the purchase of the home. Things like closing costs, any initial expected "
                             "repairs, etc...")
-            
-            home_value_compound = st.number_input(label="Expected Annual Home Appreciation Rate", key='home_appreciation_rate',
-                            min_value=0.00, max_value=None,
-                            value=0.00, step=0.05, 
-                            help="Expected annual home appreciation rate. Compounded monthly. Critical field to compare equity vs investment "
-                            "option.")
 
 
     with main_column2: # Investment Optios
@@ -129,7 +131,7 @@ with tabs[0]:
         investment_compound = st.number_input(label="Expected Annual Investment Compounding Rate", key='investment_compounding_rate',
                         min_value=0.00, max_value=None,
                         value=8.5, step=0.05, 
-                        help="Expected annual investment compounding rate (like the S&P500, for example). This value is compounding monthly")
+                        help="Expected annual investment compounding rate (like the S&P500, for example). This value is compounded monthly")
 
 
     run_simulation = st.button("🚀 Run Comparison!", use_container_width=True, type='primary')
