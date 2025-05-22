@@ -28,7 +28,7 @@ with tabs[1]:
         <p>Welcome to my app! First, a brief introduction is in order.</p>
 
         <p>My name is Rommel Artola, and I'm a Data Scientist. I'm passionate about finding answers to 
-            complicated questions and building things to make those decisions easier. 
+            complicated questions and building things to make decisions easier. 
             Feel free to connect with me on <a href='https://www.linkedin.com/in/rommelartola/' target='_blank'>Linkedin</a>!</p>
         
         <p>This app was inspired by a decision I'm currently weighing myself. With interest rates and home prices at all-time highs, 
@@ -39,10 +39,21 @@ with tabs[1]:
 
         <p>There are some limitations — most compounding values in this calculator happen consistently, while in real life they may not. Look at the historic trends of your specific values.
             For example, your rent might not increase one year, but this calculator assumes it always does. The same applies to a home's value and other investment.</p>
+        
+        <h4>Some Assumptions</h4>
 
+        <p>Home Appreciation is compounded monthly. So if you put 8%, it'll compound at value*(1+ 8/12)</p>
+        <p>If you pass a PMI, it will auto-close once the 20% equity of loan value is satisfied. PMI needs to be manually added, though.</p>
+        <p>The optional home settings is where the analysis really shines, so make sure to make use of this section, though it is optional.</p>
+        <p>Rent value is compounding anually (this assumes you sign a 12-month lease each year, with annual increases)</p>
+        <p>Investment rate compounding is compounded monthly, just like the home appreciation</p>
+        <p>Any time where total monthly home values exceeds the rent value, that amount is added into the monthly recurring investments</p>
+        <p>The home downpayment and any additional up-front costs is also assumed to be added as the initial balance to the investment</p>
+
+        <h4>Closing Details</h4>
         <p>It's up to you to tweak the inputs and run different simulations based on your specific area and situation.</p>
 
-        <p>To get the most out of this app, be sure to explore the “Optional Home Settings” section — this is where you can really tailor the experience to fit your situation.</p>
+        <p>Obviously, this does not account for tax write offs, or tax implications depending on what kind of investment account you have, but it serves as a baseline.</p>
 
         <p>Each input has an info button (denoted by the “?” on the right). Hover over it if you ever have questions — there are detailed assumptions behind each input.</p>
 
